@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Unity Social Media Timeline">
+    <meta name="author" content="Vinayak Kalaskar">
+
+    <title>Unity Social Media Timeline</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/custom-css.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-background navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand heading"> Unity Social Media Timeline </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="timeline">
+        <div ng-app="socialMedia" ng-controller="socialCtrl">
+          <div class="row conversation" ng-repeat="x in timelineContent">
+            <div class="col-md-2">
+              <img src={{x.latest_message.from_user.avatar_url}} class="img-responsive .img-thumbnail image-size" alt={{x.latest_message.from_user.name}}>
+            </div>
+            <div class="col-md-4">
+              <p class="row user-name">{{x.latest_message.from_user.name}}</p>
+              <p class="row user-message">{{x.latest_message.body}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="scripts/angularApp.js"></script>
+  </body>
+</html>
